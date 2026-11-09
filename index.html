@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Portfolio of Simeon Korkpor — Cloud Infrastructure Professional based in Waynesboro, PA. Hardware Technician at AWS, AWS Certified Solutions Architect – Associate." />
+<link rel="icon" href="data:," />
+<title>Simeon Korkpor — Cloud Infrastructure Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f5fa;
+    --bg-elev:#ffffff;
+    --bg-soft:#eeeef6;
+    --ink:#17142b;
+    --ink-2:#423e63;
+    --muted:#6d688c;
+    --line:#e0ddf0;
+    --indigo:#4f46e5;
+    --violet:#7c3aed;
+    --teal:#0d9488;
+    --accent:#6d28d9;
+    --accent-ink:#5b21b6;
+    --accent-soft:#f1eafd;
+    --chip:#efedf8;
+    --grad:linear-gradient(120deg,#4f46e5 0%,#7c3aed 52%,#0d9488 115%);
+    --grad-soft:linear-gradient(120deg,rgba(79,70,229,.10),rgba(124,58,237,.10) 55%,rgba(13,148,136,.10));
+    --shadow:0 1px 2px rgba(38,28,92,.06), 0 10px 30px rgba(38,28,92,.08);
+    --shadow-lift:0 4px 8px rgba(38,28,92,.07), 0 18px 42px rgba(76,29,149,.16);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0a0918;
+      --bg-elev:#14122b;
+      --bg-soft:#1a1836;
+      --ink:#f0eefc;
+      --ink-2:#c6c1e6;
+      --muted:#9a94bd;
+      --line:#2b2850;
+      --accent:#a78bfa;
+      --accent-ink:#c4b5fd;
+      --accent-soft:#241d4d;
+      --chip:#1e1b3f;
+      --grad-soft:linear-gradient(120deg,rgba(99,102,241,.16),rgba(139,92,246,.16) 55%,rgba(45,212,191,.13));
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.3);
+      --shadow-lift:0 4px 8px rgba(0,0,0,.35), 0 18px 44px rgba(124,58,237,.28);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Manrope", system-ui, -apple-system, Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  ::selection{background:#7c3aed;color:#fff}
+
+  /* Top bar */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .avatar{
+    width:42px;height:42px;border-radius:12px;flex:none;
+    background:var(--grad);color:#fff;
+    display:grid;place-items:center;
+    font-weight:800;font-size:15px;letter-spacing:.02em;
+    box-shadow:0 6px 16px rgba(109,40,217,.35);
+  }
+  .brand-text b{font-size:15px;line-height:1.1;display:block}
+  .brand-text span{font-size:12.5px;color:var(--muted);display:block;line-height:1.2}
+  .nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+  .nav a{
+    text-decoration:none;font-size:13.5px;font-weight:600;color:var(--ink-2);
+    padding:7px 11px;border-radius:999px;transition:background .15s ease,color .15s ease;
+  }
+  .nav a:hover{background:var(--chip);color:var(--ink)}
+  @media (max-width:640px){ .nav{display:none} }
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;color:#f2f0ff;
+    background:
+      radial-gradient(720px 340px at 88% -60px, rgba(45,212,191,.32), transparent 62%),
+      radial-gradient(820px 420px at 6% -120px, rgba(99,102,241,.5), transparent 62%),
+      linear-gradient(128deg,#1c1445 0%,#2e1065 46%,#4c1d95 74%,#134e4a 128%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto 0 0 0;height:3px;
+    background:linear-gradient(90deg,#6366f1,#a855f7 45%,#2dd4bf);
+  }
+  .hero-in{position:relative;padding:58px 0 50px}
+  .hero-kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:"IBM Plex Mono", monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:#ddd6fe;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 13px;
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#34d399;flex:none;box-shadow:0 0 10px rgba(52,211,153,.9)}
+  .hero h1{
+    margin:20px 0 8px;font-size:clamp(40px,6.4vw,62px);line-height:1.02;letter-spacing:-.03em;font-weight:800;color:#fff;
+  }
+  .hero-role{font-size:clamp(18px,2.6vw,24px);font-weight:600;color:#cfc9f5;margin:0}
+  .hero-role strong{
+    color:#fff;
+    background:linear-gradient(92deg,#a5b4fc,#e9d5ff 55%,#5eead4);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p.lede{max-width:680px;color:#c3bdf0;font-size:16.5px;margin:16px 0 0;line-height:1.65}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-weight:700;font-size:14.5px;padding:12px 19px;border-radius:11px;border:1px solid transparent;
+    transition:transform .16s ease, box-shadow .16s ease, background .16s ease;
+  }
+  .btn-primary{background:linear-gradient(120deg,#6366f1,#8b5cf6 60%,#7c3aed);color:#fff;box-shadow:0 10px 24px rgba(109,40,217,.4)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(109,40,217,.5)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#f2f0ff;border-color:rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:13.5px;color:#c3bdf0}
+  .hero-meta b{color:#fff;font-weight:700}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-28px auto 0;position:relative;z-index:2}
+  .stat{
+    background:var(--bg-elev);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+  .stat b{
+    font-size:27px;letter-spacing:-.02em;display:block;line-height:1;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .stat span{font-size:13px;color:var(--muted);font-weight:600;display:block;margin-top:7px;line-height:1.35}
+  @media (max-width:760px){ .stats{grid-template-columns:1fr 1fr} }
+
+  main{padding:40px 0 10px}
+  section{padding:28px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px}
+  .sec-head h2{font-size:25px;letter-spacing:-.02em;margin:0;position:relative;padding-bottom:10px}
+  .sec-head h2::after{content:"";position:absolute;left:0;bottom:0;width:52px;height:4px;border-radius:99px;background:var(--grad)}
+  .sec-head p{margin:0;color:var(--muted);font-size:14px;text-align:right}
+  @media (max-width:640px){ .sec-head{flex-direction:column} .sec-head p{text-align:left} }
+
+  .two-col{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:start}
+  @media (max-width:860px){ .two-col{grid-template-columns:1fr} }
+
+  .card{
+    background:linear-gradient(180deg, color-mix(in srgb, var(--bg-elev) 92%, transparent), var(--bg-elev));
+    border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  }
+  .card-pad{padding:22px}
+
+  /* Experience timeline */
+  .timeline{position:relative;padding:8px 0}
+  .timeline::before{
+    content:"";position:absolute;top:26px;bottom:26px;left:33px;width:2px;border-radius:2px;
+    background:linear-gradient(180deg,#6366f1,#a855f7 55%,#14b8a6);
+    opacity:.45;
+  }
+  @media (max-width:520px){ .timeline::before{left:27px} }
+  .job{padding:18px 22px 18px 58px;position:relative}
+  .job + .job{border-top:1px solid var(--line)}
+  .job::before{
+    content:"";position:absolute;left:27px;top:26px;width:14px;height:14px;border-radius:50%;
+    background:var(--bg-elev);border:3px solid var(--violet);z-index:1;
+  }
+  .job:first-child::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 4px var(--accent-soft), 0 0 14px rgba(139,92,246,.55)}
+  @media (max-width:520px){ .job{padding-left:48px} .job::before{left:21px} }
+  .job-top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start}
+  .job h3{margin:0;font-size:17.5px;letter-spacing:-.01em;line-height:1.3}
+  .job .org{font-weight:700;color:var(--accent-ink);font-size:14.5px;margin-top:2px}
+  .job .when{font-family:"IBM Plex Mono", monospace;font-size:12px;font-weight:600;color:var(--muted);background:var(--chip);border-radius:999px;padding:5px 10px;white-space:nowrap}
+  .job .when.current{background:var(--grad);color:#fff}
+  .job ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:14.5px}
+  .job ul li{margin:5px 0}
+  .job p{margin:10px 0 0;color:var(--ink-2);font-size:14.5px}
+
+  /* Focus list */
+  .focus-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .focus-list li{display:flex;gap:12px;align-items:flex-start;background:var(--bg-soft);border-radius:12px;padding:13px 14px}
+  .focus-ic{width:34px;height:34px;border-radius:9px;background:var(--grad);color:#fff;display:grid;place-items:center;flex:none;font-size:15px;font-weight:800;box-shadow:0 5px 12px rgba(109,40,217,.3)}
+  .focus-list b{font-size:14.5px;display:block;line-height:1.3}
+  .focus-list span{font-size:13.5px;color:var(--muted);line-height:1.45;display:block;margin-top:2px}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:860px){ .skills-grid{grid-template-columns:1fr} }
+  .skill-card{padding:20px;transition:transform .16s ease, box-shadow .16s ease}
+  .skill-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .skill-card h3{margin:0 0 4px;font-size:15.5px}
+  .skill-card > p{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:13px;font-weight:600;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 11px}
+  .chip.hot{background:var(--grad-soft);border-color:color-mix(in srgb, var(--violet) 32%, transparent);color:var(--accent-ink)}
+
+  /* Certs */
+  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:860px){ .certs{grid-template-columns:1fr} }
+  .cert{padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .16s ease, box-shadow .16s ease}
+  .cert:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .cert-badge{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:13px;color:#fff;box-shadow:0 6px 14px rgba(30,20,80,.25)}
+  .cert h3{margin:2px 0 0;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+  .cert .issuer{font-size:13.5px;color:var(--muted);font-weight:600}
+  .cert dl{margin:8px 0 0;display:grid;gap:5px;font-size:13.5px}
+  .cert dl div{display:flex;justify-content:space-between;gap:10px;border-top:1px dashed var(--line);padding-top:6px}
+  .cert dt{color:var(--muted)} .cert dd{margin:0;font-weight:700;text-align:right}
+
+  /* Education + Links */
+  .edu-list{display:grid;gap:14px}
+  .edu{display:flex;gap:16px;padding:20px;align-items:flex-start}
+  .edu-year{font-family:"IBM Plex Mono", monospace;font-weight:600;font-size:13px;background:var(--grad);color:#fff;border-radius:9px;padding:7px 11px;flex:none;box-shadow:0 5px 12px rgba(109,40,217,.3)}
+  .edu h3{margin:0;font-size:16px;line-height:1.35}
+  .edu p{margin:3px 0 0;color:var(--muted);font-size:14px}
+
+  .links-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .links-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg-elev);box-shadow:var(--shadow)}
+  .links-list .lft{display:flex;gap:11px;align-items:center;min-width:0}
+  .links-list .ic{width:36px;height:36px;border-radius:9px;background:var(--grad-soft);border:1px solid color-mix(in srgb, var(--violet) 25%, transparent);color:var(--accent-ink);display:grid;place-items:center;flex:none;font-size:14px;font-weight:800}
+  .links-list b{font-size:14.5px;display:block;line-height:1.25}
+  .links-list span{font-size:12.5px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:210px}
+  .pill{font-size:12px;font-weight:700;border-radius:999px;padding:6px 11px;flex:none;text-decoration:none}
+  .pill.go{background:var(--grad);color:#fff;box-shadow:0 5px 12px rgba(109,40,217,.3)}
+  .pill.soon{background:var(--chip);color:var(--muted)}
+
+  /* GitHub projects */
+  .gh-bar{
+    display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;color:#e9e6ff;border-radius:var(--radius);
+    padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow);
+    background:
+      radial-gradient(420px 160px at 96% -40px, rgba(45,212,191,.28), transparent 65%),
+      linear-gradient(120deg,#241a52,#3b1470 60%,#123f3a 130%);
+  }
+  .gh-bar b{color:#fff}
+  .gh-bar .gh-stat{font-size:14px}
+  .gh-bar .gh-stat strong{
+    font-size:21px;letter-spacing:-.02em;
+    background:linear-gradient(92deg,#a5b4fc,#e9d5ff 55%,#5eead4);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .gh-bar a{margin-left:auto;font-weight:700;font-size:14px;color:#fff;text-decoration:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .15s ease}
+  .gh-bar a:hover{background:rgba(255,255,255,.22)}
+  @media (max-width:640px){ .gh-bar a{margin-left:0} }
+  .repos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:760px){ .repos{grid-template-columns:1fr} }
+  .repo{padding:20px;display:flex;flex-direction:column;gap:8px;text-decoration:none;position:relative;overflow:hidden;transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
+  .repo::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:0;transition:opacity .16s ease}
+  .repo:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:color-mix(in srgb, var(--violet) 45%, var(--line))}
+  .repo:hover::before{opacity:1}
+  .repo-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .repo-name{font-family:"IBM Plex Mono", monospace;font-size:14.5px;font-weight:600;color:var(--accent-ink);word-break:break-word;line-height:1.35}
+  .repo-arrow{color:var(--muted);flex:none;font-size:15px;transition:transform .16s ease,color .16s ease}
+  .repo:hover .repo-arrow{transform:translate(2px,-2px);color:var(--accent-ink)}
+  .repo p{margin:0;color:var(--ink-2);font-size:14px;line-height:1.6;flex:1}
+  .repo-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+  .repo-lang{font-size:12px;font-weight:700;background:var(--grad-soft);border:1px solid color-mix(in srgb, var(--violet) 28%, transparent);color:var(--accent-ink);border-radius:999px;padding:4px 9px}
+  .repo-tag{font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 9px}
+
+  .note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.55}
+
+  footer{border-top:1px solid var(--line);margin-top:34px;padding:26px 0 36px}
+  .foot-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer p{margin:0;font-size:13.5px;color:var(--muted)}
+  footer a{font-weight:700;color:var(--ink);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn,.repo,.skill-card,.cert,.repo-arrow{transition:none}
+    .btn:hover,.repo:hover,.skill-card:hover,.cert:hover{transform:none}
+    .repo:hover .repo-arrow{transform:none}
+  }
+
+  @media print{
+    .topbar,.hero-actions{display:none}
+    .hero{background:#fff;color:#000}
+    .hero h1,.hero-role strong,.hero-meta b{color:#000;-webkit-text-fill-color:#000}
+    .hero p.lede,.hero-role,.hero-meta,.hero-kicker{color:#333}
+    .stat b,.gh-bar .gh-stat strong{-webkit-text-fill-color:#000}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">
+      <span class="avatar" aria-hidden="true">SK</span>
+      <span class="brand-text"><b>Simeon Korkpor</b><span>Cloud Infrastructure Professional</span></span>
+    </a>
+    <nav class="nav" aria-label="Portfolio sections">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#github">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#links">Links</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero-in">
+    <span class="hero-kicker"><span class="dot"></span> Hardware Technician · Amazon Web Services</span>
+    <h1>Simeon Korkpor</h1>
+    <p class="hero-role">Cloud Infrastructure Professional — <strong>keeping compute reliable at scale.</strong></p>
+    <p class="lede">Cloud infrastructure professional with 3+ years of experience across AWS data center operations and enterprise technical operations. I support EC2, S3, and compute infrastructure, validate firmware, and help maintain the systems behind high-performance workloads — with a track record of 99.9% system availability.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://github.com/UncleD0886475978" target="_blank" rel="noopener">View GitHub ↗</a>
+      <a class="btn btn-ghost" href="#experience">See experience ↓</a>
+    </div>
+    <div class="hero-meta">
+      <span>📍 <b>Waynesboro, PA</b></span>
+      <span>☁️ <b>AWS Certified</b> Solutions Architect – Associate</span>
+      <span>🎓 <b>BS, Cloud Computing</b> — Purdue University Global</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats" aria-label="Highlights">
+    <div class="stat"><b>3+ yrs</b><span>Cloud &amp; data center experience</span></div>
+    <div class="stat"><b>99.9%</b><span>System availability maintained at ADP</span></div>
+    <div class="stat"><b>3</b><span>Industry certifications held</span></div>
+    <div class="stat"><b>2</b><span>Degrees in cloud &amp; IT security</span></div>
+  </div>
+
+  <main>
+    <!-- Experience + Focus -->
+    <section id="experience">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <p>From enterprise data center operations<br>to AWS infrastructure in Virginia.</p>
+      </div>
+      <div class="two-col">
+        <div class="card timeline">
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Hardware Technician</h3>
+                <div class="org">Amazon Web Services (AWS) · Virginia</div>
+              </div>
+              <span class="when current">May 2026 — Present</span>
+            </div>
+            <ul>
+              <li>EC2, S3, and compute infrastructure support for AWS data center operations.</li>
+              <li>Firmware validation across server hardware.</li>
+              <li>Liquid cooling support for high-performance computing (HPC) workloads.</li>
+              <li>SLA-driven ticket resolution to keep services within target response times.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Associate Technical Operations Analyst — Data Center</h3>
+                <div class="org">ADP · Sioux Falls, SD</div>
+              </div>
+              <span class="when">Sep 2023 — May 2026</span>
+            </div>
+            <ul>
+              <li>Maintained <strong>99.9% system availability</strong> in enterprise data center operations.</li>
+              <li>Supported day-to-day technical operations in a 24/7 environment.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Associate Technical Operations Analyst — Data Center</h3>
+                <div class="org">Apex Systems (contract for ADP) · Sioux Falls, SD</div>
+              </div>
+              <span class="when">May 2023 — Sep 2023</span>
+            </div>
+            <p>Contract role supporting ADP data center operations in the same analyst capacity, ahead of converting to a direct ADP position.</p>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>IT Volunteer</h3>
+                <div class="org">Dakota Young Stars Inc.</div>
+              </div>
+              <span class="when">Jan 2020 — Present</span>
+            </div>
+            <p>Ongoing volunteer IT support alongside professional roles in cloud and data center operations.</p>
+          </article>
+        </div>
+
+        <aside class="card card-pad" aria-label="What I do">
+          <h3 style="margin:0 0 14px;font-size:16px;">What I do day to day</h3>
+          <ul class="focus-list">
+            <li>
+              <span class="focus-ic" aria-hidden="true">🖥️</span>
+              <div><b>Compute infrastructure support</b><span>Hands-on support for EC2, S3, and the compute fleet behind AWS services.</span></div>
+            </li>
+            <li>
+              <span class="focus-ic" aria-hidden="true">✓</span>
+              <div><b>Firmware validation</b><span>Validating firmware so hardware ships and runs to spec.</span></div>
+            </li>
+            <li>
+              <span class="focus-ic" aria-hidden="true">❄️</span>
+              <div><b>Liquid cooling for HPC</b><span>Supporting liquid-cooled systems built for high-performance workloads.</span></div>
+            </li>
+            <li>
+              <span class="focus-ic" aria-hidden="true">⏱️</span>
+              <div><b>SLA-driven resolution</b><span>Working tickets against service-level targets, with uptime as the priority.</span></div>
+            </li>
+          </ul>
+          <p class="note">Work grounded in a BS in Cloud Computing (Purdue University Global, 2025) and hands-on AWS and data center operations experience.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="sec-head">
+        <h2>Skills</h2>
+        <p>Tools and platforms from<br>daily work in the data center.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <h3>☁️ Cloud &amp; Infrastructure</h3>
+          <p>AWS services and modern delivery practices.</p>
+          <div class="chips">
+            <span class="chip hot">AWS Core Services</span>
+            <span class="chip hot">EC2</span>
+            <span class="chip hot">S3</span>
+            <span class="chip">Docker</span>
+            <span class="chip">CI / CD</span>
+          </div>
+        </div>
+        <div class="card skill-card">
+          <h3>🖧 Systems &amp; Networking</h3>
+          <p>Operating systems and the network fundamentals underneath them.</p>
+          <div class="chips">
+            <span class="chip hot">Linux</span>
+            <span class="chip hot">Windows Server</span>
+            <span class="chip">DNS</span>
+            <span class="chip">DHCP</span>
+            <span class="chip">TCP / IP</span>
+          </div>
+        </div>
+        <div class="card skill-card">
+          <h3>🛠️ Scripting &amp; Tools</h3>
+          <p>Automation and the systems used to track the work.</p>
+          <div class="chips">
+            <span class="chip hot">PowerShell</span>
+            <span class="chip hot">Bash</span>
+            <span class="chip">ServiceNow</span>
+            <span class="chip">Jira</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Projects -->
+    <section id="github">
+      <div class="sec-head">
+        <h2>GitHub Projects</h2>
+        <p>Selected work from<br>github.com/UncleD0886475978</p>
+      </div>
+      <div class="gh-bar">
+        <span class="gh-stat"><strong>21</strong> &nbsp;public repositories</span>
+        <span class="gh-stat">On GitHub since <b>January 2023</b></span>
+        <span class="gh-stat">Focus: <b>networking · cloud · security labs</b></span>
+        <a href="https://github.com/UncleD0886475978" target="_blank" rel="noopener">View full profile ↗</a>
+      </div>
+      <div class="repos">
+        <a class="card repo" href="https://github.com/UncleD0886475978/sim" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">sim</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>Sim-AI — a self-hosted AI chat + coding assistant that runs 100% locally on Gemma 4 E4B via llama.cpp (llama-server). FastAPI backend with true streaming, Postgres conversation history, Docker, and Maya, a cover-letter assistant.</p>
+          <span class="repo-meta"><span class="repo-lang">● Python</span><span class="repo-tag">FastAPI</span><span class="repo-tag">Docker</span><span class="repo-tag">Local AI</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/networking-cheatsheet" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">networking-cheatsheet</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>A comprehensive, production-ready networking cheat sheet covering core protocols, CLI commands, subnetting, and architecture patterns.</p>
+          <span class="repo-meta"><span class="repo-tag">Networking</span><span class="repo-tag">Reference</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/segmented-lab-cyberlab" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">segmented-lab-cyberlab</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>A segmented, multi-zone cyber security laboratory environment designed for hands-on penetration testing, network monitoring, and defensive security training</p>
+          <span class="repo-meta"><span class="repo-tag">Security lab</span><span class="repo-tag">Networking</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/iac-networking" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">iac-networking</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>Infrastructure as Code (IaC) repository for automating, deploying, and managing secure, scalable cloud networking infrastructure.</p>
+          <span class="repo-meta"><span class="repo-tag">IaC</span><span class="repo-tag">Cloud networking</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/network-Linux-troubleshooting-automation-scripts" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">network-Linux-troubleshooting-automation-scripts</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>Network and Linux troubleshooting &amp; automation scripts — monitoring, config backups, device audits, and diagnostic runbooks.</p>
+          <span class="repo-meta"><span class="repo-lang">● Shell</span><span class="repo-tag">Automation</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/home-lab-network-docs" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">home-lab-network-docs</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>Home lab network documentation — topology diagrams, VLAN design, Proxmox virtual networking, and firewall configs for my self-hosted infrastructure.</p>
+          <span class="repo-meta"><span class="repo-tag">Home lab</span><span class="repo-tag">Documentation</span></span>
+        </a>
+        <a class="card repo" href="https://github.com/UncleD0886475978/willow-creek-hospital-cloud" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name">willow-creek-hospital-cloud</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+          <p>Cloud architecture for a rural hospital — planning, Terraform, org schema.</p>
+          <span class="repo-meta"><span class="repo-tag">Cloud architecture</span><span class="repo-tag">Terraform</span></span>
+        </a>
+        <div class="card repo" style="justify-content:center;background:var(--bg-soft)">
+          <span class="repo-name" style="color:var(--ink)">+ 14 more repositories</span>
+          <p>21 public repositories in total on the profile — browse the rest, including labs, docs, and experiments, directly on GitHub.</p>
+          <span class="repo-meta"><a href="https://github.com/UncleD0886475978?tab=repositories" target="_blank" rel="noopener" style="font-weight:700;font-size:13.5px;color:var(--accent-ink);text-decoration:none">Browse all repositories ↗</a></span>
+        </div>
+      </div>
+      <p class="note">Repository count and account date verified from the public GitHub profile on Nov 9, 2026. Descriptions above are the repositories' own descriptions.</p>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="sec-head">
+        <h2>Certifications</h2>
+        <p>Verified credentials in cloud<br>architecture, cloud platforms &amp; agile delivery.</p>
+      </div>
+      <div class="certs">
+        <div class="card cert">
+          <span class="cert-badge" style="background:linear-gradient(135deg,#6366f1,#7c3aed)">AWS</span>
+          <h3>AWS Certified Solutions Architect – Associate</h3>
+          <span class="issuer">Amazon Web Services · SAA-C03</span>
+          <dl>
+            <div><dt>Issued</dt><dd>Aug 17, 2026</dd></div>
+            <div><dt>Level</dt><dd>Associate</dd></div>
+          </dl>
+        </div>
+        <div class="card cert">
+          <span class="cert-badge" style="background:linear-gradient(135deg,#0d9488,#0f766e)">C+</span>
+          <h3>CompTIA Cloud+</h3>
+          <span class="issuer">CompTIA · CV0-004</span>
+          <dl>
+            <div><dt>Valid through</dt><dd>Mar 2029</dd></div>
+            <div><dt>Focus</dt><dd>Cloud operations</dd></div>
+          </dl>
+        </div>
+        <div class="card cert">
+          <span class="cert-badge" style="background:linear-gradient(135deg,#312e81,#4c1d95)">SMC</span>
+          <h3>Scrum Master Certified</h3>
+          <span class="issuer">Scrum Master Certified (SMC)</span>
+          <dl>
+            <div><dt>Focus</dt><dd>Agile delivery</dd></div>
+            <div><dt>Applies to</dt><dd>Team operations</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education + Links -->
+    <section id="education">
+      <div class="sec-head">
+        <h2>Education &amp; Links</h2>
+        <p>Formal training in cloud computing<br>and IT security.</p>
+      </div>
+      <div class="two-col">
+        <div class="edu-list">
+          <div class="card edu">
+            <span class="edu-year">2025</span>
+            <div>
+              <h3>Bachelor of Science in Cloud Computing</h3>
+              <p>Purdue University Global</p>
+            </div>
+          </div>
+          <div class="card edu">
+            <span class="edu-year">2023</span>
+            <div>
+              <h3>AAS in Information Technology and Security</h3>
+              <p>Southeast Technical College</p>
+            </div>
+          </div>
+          <div class="card card-pad">
+            <h3 style="margin:0 0 8px;font-size:16px;">In one line</h3>
+            <p style="margin:0;color:var(--ink-2);font-size:14.5px;">IT Volunteer at Dakota Young Stars Inc. since 2020, data center operations at ADP via Apex Systems and then directly (2023–2026), and now Hardware Technician at AWS in Virginia — with an AAS in IT and Security (2023), a BS in Cloud Computing (2025), and AWS Solutions Architect – Associate, CompTIA Cloud+, and Scrum Master certifications.</p>
+          </div>
+        </div>
+
+        <div id="links">
+          <ul class="links-list">
+            <li>
+              <div class="lft">
+                <span class="ic" aria-hidden="true">🐙</span>
+                <div><b>GitHub</b><span>github.com/UncleD0886475978</span></div>
+              </div>
+              <a class="pill go" href="https://github.com/UncleD0886475978" target="_blank" rel="noopener">Visit ↗</a>
+            </li>
+            <li>
+              <div class="lft">
+                <span class="ic" aria-hidden="true">in</span>
+                <div><b>LinkedIn</b><span>linkedin.com/in/simeon-korkpor-02935537b</span></div>
+              </div>
+              <a class="pill go" href="https://www.linkedin.com/in/simeon-korkpor-02935537b/" target="_blank" rel="noopener">Visit ↗</a>
+            </li>
+            <li>
+              <div class="lft">
+                <span class="ic" aria-hidden="true">◎</span>
+                <div><b>Indeed</b><span>Link to be added</span></div>
+              </div>
+              <span class="pill soon">Add link</span>
+            </li>
+            <li>
+              <div class="lft">
+                <span class="ic" aria-hidden="true">▣</span>
+                <div><b>Portfolio</b><span>This page — shareable link</span></div>
+              </div>
+              <span class="pill soon">You are here</span>
+            </li>
+          </ul>
+          <p class="note">To add your Indeed profile, send me the URL and I'll drop it in — no placeholder links point anywhere until you provide the real one. This page itself is your portfolio.</p>
+
+          <div class="card card-pad" style="margin-top:14px">
+            <h3 style="margin:0 0 6px;font-size:15.5px;">Current role</h3>
+            <p style="margin:0;color:var(--ink-2);font-size:14.5px;">Hardware Technician at Amazon Web Services (AWS), Virginia, since May 2026 — EC2, S3, and compute infrastructure support, firmware validation, liquid cooling for HPC workloads, and SLA-driven ticket resolution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-in">
+      <p><strong style="color:var(--ink)">Simeon Korkpor</strong> · Waynesboro, PA · Cloud Infrastructure Professional</p>
+      <p><a href="https://github.com/UncleD0886475978" target="_blank" rel="noopener">GitHub ↗</a> &nbsp;·&nbsp; <span id="yr"></span></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = '© ' + new Date().getFullYear() + ' Simeon Korkpor';
+</script>
+</body>
+</html>
