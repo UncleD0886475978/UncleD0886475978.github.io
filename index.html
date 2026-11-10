@@ -273,6 +273,27 @@
   .repo-lang{font-size:12px;font-weight:700;background:var(--grad-soft);border:1px solid color-mix(in srgb, var(--violet) 28%, transparent);color:var(--accent-ink);border-radius:999px;padding:4px 9px}
   .repo-tag{font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 9px}
 
+  /* ZADC family-legacy callout */
+  .repo-legacy{border-color:color-mix(in srgb, #ca8a04 42%, var(--line))}
+  .repo-legacy:hover{border-color:color-mix(in srgb, #ca8a04 65%, var(--line))}
+  .repo-legacy::before{background:linear-gradient(90deg,#ca8a04,#16a34a)}
+  .repo-name-wrap{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0}
+  .legacy-badge{
+    display:inline-flex;align-items:center;gap:5px;flex:none;
+    font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    color:#6d4c00;background:linear-gradient(120deg,#fde68a,#fbbf24);
+    border:1px solid rgba(146,100,0,.35);border-radius:999px;padding:3px 9px;
+    box-shadow:0 3px 8px rgba(202,138,4,.28);
+  }
+  .legacy-badge svg{display:block}
+  .legacy-note{
+    margin:2px 0 0;padding:12px 14px;
+    border-left:3px solid #ca8a04;border-radius:0 10px 10px 0;
+    background:linear-gradient(120deg, rgba(202,138,4,.14), rgba(22,163,74,.11));
+    font-size:13.5px;line-height:1.6;color:var(--ink-2);font-style:italic;
+  }
+  .legacy-note b{color:var(--ink);font-style:normal}
+
   .note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.55}
 
   footer{border-top:1px solid var(--line);margin-top:34px;padding:26px 0 36px}
@@ -520,9 +541,10 @@
           <p>Cloud architecture for a rural hospital — planning, Terraform, org schema.</p>
           <span class="repo-meta"><span class="repo-tag">Cloud architecture</span><span class="repo-tag">Terraform</span></span>
         </a>
-        <a class="card repo" href="https://github.com/UncleD0886475978/zadc-liberia-database" target="_blank" rel="noopener">
-          <span class="repo-top"><span class="repo-name">zadc-liberia-database</span><span class="repo-arrow" aria-hidden="true">↗</span></span>
+        <a class="card repo repo-legacy" href="https://github.com/UncleD0886475978/zadc-liberia-database" target="_blank" rel="noopener">
+          <span class="repo-top"><span class="repo-name-wrap"><span class="repo-name">zadc-liberia-database</span><span class="legacy-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22v-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 15c0-5-3.5-8.5-9-9 .5 5.5 4 9 9 9Z" fill="currentColor"/><path d="M12 12c0-4.2 3-7.2 8.5-7.7C20 8.8 16.7 12 12 12Z" fill="currentColor" opacity=".6"/></svg>Family Legacy</span></span><span class="repo-arrow" aria-hidden="true">↗</span></span>
           <p>ZADC Inc. Liberia (Zao Development Organization) — PostgreSQL database for the Nimba County NGO: projects, funders, grants, and wells/facilities, seeded with its documented record. Docker + Kubernetes, one-command install.</p>
+          <blockquote class="legacy-note">“A family legacy — ZADC was founded in Liberia by my father and a few friends. Its work came to an end when he relocated to the United States. <b>My goal is to bring it back.</b>”</blockquote>
           <span class="repo-meta"><span class="repo-lang">● PostgreSQL</span><span class="repo-tag">Docker</span><span class="repo-tag">Kubernetes</span><span class="repo-tag">NGO</span></span>
         </a>
         <a class="card repo" href="https://github.com/UncleD0886475978/clothing-store-database" target="_blank" rel="noopener">
