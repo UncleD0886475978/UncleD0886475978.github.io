@@ -134,8 +134,11 @@ section{padding:38px 0 6px}
 .price-row .our-price{font-family:"Baloo 2";font-size:1.7rem;font-weight:800;color:var(--ink)}
 .price-row .save{ background:var(--green-soft);color:var(--green);font-weight:900;font-size:.82rem;padding:5px 9px;border-radius:999px}
 .book-btn{min-height:50px;width:100%;border-radius:13px;border:0;font-weight:900;font-size:1rem;padding:12px 14px}
-.book-btn.add{background:var(--teal-dark);color:#fff}
-@media (prefers-color-scheme: dark){.book-btn.add{background:var(--teal);color:#06231F}}
+a.book-btn.buy{background:var(--teal-dark);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;text-align:center}
+a.book-btn.buy:hover{background:var(--teal)}
+@media (prefers-color-scheme: dark){a.book-btn.buy{background:var(--teal);color:#06231F}}
+.book-btn.list-add{background:transparent;color:var(--teal-dark);border:1.5px solid var(--line);min-height:44px;font-size:.92rem;padding:9px 14px}
+@media (prefers-color-scheme: dark){.book-btn.list-add{color:var(--teal)}}
 .book-btn.added{background:var(--green-soft);color:var(--green);border:1.5px solid var(--green)}
 .coming-note{border:1.5px dashed var(--line);border-radius:13px;padding:12px 14px;text-align:center;font-weight:800;color:var(--muted);min-height:50px;display:flex;align-items:center;justify-content:center}
 .no-price{font-weight:800;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
@@ -228,7 +231,7 @@ footer p{color:#B9CCC6}
 
   <div class="notice" role="note">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B97A00" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.5"/></svg>
-    <p><strong>Online checkout is being set up.</strong> Prices below are final for this store, but no payment is taken on this page yet. Tap <strong>&ldquo;Get this book — checkout opening soon&rdquo;</strong> to add a book to your list, and you&rsquo;ll be ready the moment checkout opens. No book files are downloaded from this page.</p>
+    <p><strong>Checkout is open on Payhip.</strong> Tap <strong>&ldquo;Buy the soft copy&rdquo;</strong> on an available book to open its Payhip product page, where payment is taken and the PDF is delivered. No book files are downloaded from this page itself.</p>
   </div>
 
   <!-- SHOP BY AGE -->
@@ -317,8 +320,8 @@ footer p{color:#B9CCC6}
             <span class="our-price">$2.99</span>
             <span class="save">Save $2.00</span>
           </div>
-          <button class="book-btn add" data-add>Add to my list</button>
-          <p style="margin:0;font-size:.86rem;color:var(--muted);text-align:center">Get this book — checkout opening soon</p>
+          <a class="book-btn buy" href="https://payhip.com/b/EFlBP" target="_blank" rel="noopener">Buy the soft copy — $2.99</a>
+          <button class="book-btn list-add" data-add>Add to my list</button>
         </div>
       </article>
     </div>
@@ -346,8 +349,8 @@ footer p{color:#B9CCC6}
             <span class="our-price">$3.99</span>
             <span class="save">Save $2.00</span>
           </div>
-          <button class="book-btn add" data-add>Add to my list</button>
-          <p style="margin:0;font-size:.86rem;color:var(--muted);text-align:center">Get this book — checkout opening soon</p>
+          <a class="book-btn buy" href="https://payhip.com/b/quZs3" target="_blank" rel="noopener">Buy the soft copy — $3.99</a>
+          <button class="book-btn list-add" data-add>Add to my list</button>
         </div>
       </article>
 
@@ -367,8 +370,8 @@ footer p{color:#B9CCC6}
             <span class="our-price">$3.99</span>
             <span class="save">Save $2.00</span>
           </div>
-          <button class="book-btn add" data-add>Add to my list</button>
-          <p style="margin:0;font-size:.86rem;color:var(--muted);text-align:center">Get this book — checkout opening soon</p>
+          <a class="book-btn buy" href="https://payhip.com/b/eJilI" target="_blank" rel="noopener">Buy the soft copy — $3.99</a>
+          <button class="book-btn list-add" data-add>Add to my list</button>
         </div>
       </article>
 
@@ -435,7 +438,7 @@ footer p{color:#B9CCC6}
       <div class="why-card">
         <div class="icon icon-amber"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9A6B00" stroke-width="2" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></div>
         <h3>Instant, no shipping wait</h3>
-        <p>When checkout opens, your book is delivered as a digital file right away — no waiting for a package and no shipping cost.</p>
+        <p>Your book is delivered as a digital file right away — no waiting for a package and no shipping cost.</p>
       </div>
       <div class="why-card">
         <div class="icon icon-coral"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 6.5c-.7-1-2.6-1.5-5-1.5-3 0-5 1.3-5 3.2 0 4.8 10 2.4 10 7 0 1.9-2 3.3-5 3.3-2.4 0-4.3-.6-5-1.6"/></svg></div>
@@ -493,8 +496,8 @@ footer p{color:#B9CCC6}
 
     <!-- MY LIST -->
     <div class="list-panel" id="my-list">
-      <h2>My List — checkout opening soon</h2>
-      <p>Books you tap &ldquo;Add to my list&rdquo; on appear here for this visit, so you know exactly what you want when checkout opens. Nothing is charged and nothing is downloaded from this page.</p>
+      <h2>My List</h2>
+      <p>Books you tap &ldquo;Add to my list&rdquo; on appear here for this visit. Nothing is charged and nothing is downloaded from this page — buy buttons open Payhip to complete a purchase.</p>
       <ul class="list-items" id="listItems"><li class="empty-list" id="emptyItem">Your list is empty — add an available book above.</li></ul>
       <p id="listTotal" style="font-weight:900;color:#FFC94D;margin-top:12px"></p>
       <div class="list-actions">
@@ -510,7 +513,7 @@ footer p{color:#B9CCC6}
     <div>
       <h2>Books by the SK Family</h2>
       <p>Soft-copy books by Derick for young readers — priced $2 under the online price by age band: Age 3-4 = $2.99, Age 5-10 = $3.99, Age 10-15 = $4.99.</p>
-      <p>This storefront is a static site, ready to host free on GitHub Pages. Online checkout is being set up — no payment is taken here yet.</p>
+      <p>This storefront is a static site, ready to host free on GitHub Pages. Buy buttons for available books open their Payhip product pages, where payment and delivery happen.</p>
     </div>
     <div>
       <h2>Also available</h2>
@@ -574,12 +577,12 @@ footer p{color:#B9CCC6}
     var title = card.getAttribute('data-title');
     var price = card.getAttribute('data-price');
     var priceNum = parseFloat((price||'0').replace('$','')) || 0;
-    btn.textContent = 'Get this book — checkout opening soon';
+    btn.textContent = 'Add to my list';
     btn.addEventListener('click', function(){
       if(myList.has(title)){
         myList.delete(title);
         btn.classList.remove('added');
-        btn.textContent = 'Get this book — checkout opening soon';
+        btn.textContent = 'Add to my list';
         showToast('Removed from your list: ' + title);
       } else {
         myList.set(title, {price: price, priceNum: priceNum});
@@ -595,7 +598,7 @@ footer p{color:#B9CCC6}
     myList.clear();
     document.querySelectorAll('[data-add]').forEach(function(b){
       b.classList.remove('added');
-      b.textContent = 'Get this book — checkout opening soon';
+      b.textContent = 'Add to my list';
     });
     renderList();
     showToast('Your list is cleared.');
